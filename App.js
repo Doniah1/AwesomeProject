@@ -21,6 +21,7 @@ import { StyleSheet, Vibration, View,Text,Image } from 'react-native';
 
 
 const App = () =>{
+  
 return(
   < View style={styles.container}>
     <View style={styles.myStyle}>
@@ -30,7 +31,7 @@ return(
       source={{uri:'https://snack-web-player.s3.us-west-1.amazonaws.com/v2/46/static/media/react-native-logo.79778b9e.png'}}
        />
      
-     <View style={styles.myStyleChildd}>
+     <View style={styles.myStyleChildd}> 
 
      
       
@@ -41,7 +42,7 @@ return(
     </View>
       <View style={styles.myStyleChilddd}>
         <Text style={styles.text1}>My UI</Text>
-
+        
       
 
      
