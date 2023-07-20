@@ -61,15 +61,25 @@ import { creatUser, creatUserr } from '../res/Styles/api';
   ];
 
   const onSubmit =()=>{
-    if(setName || setTel || setBirithdayDate || setCategory == null){
-      Alert.alert("Massad","The Field is empyy")
+    if(setName || setTel || setBirithdayDate || setCategory == " "){
+      //Alert.alert("Massad","The Field is empyy")
+      const creatUserFromApi =()=>{ 
+        creatUser(body)
+        .then((res)=>{
+          console.log("username",res); navigatin.navigate('HomeScreen1')
+        })
+      }
+
+      navigatin.navigate('HomeScreen1')
+
     }
    else{
-    navigatin.navigate('HomeScreen1')
+    Alert.alert("Massad","The Field is empyy")
+    //navigatin.navigate('HomeScreen1')
   //const creatUserFromApi =()=>{ 
     //creatUser(body)
     //.then((res)=>{
-      //console.log("username",res);
+      //console.log("username",res); navigatin.navigate('HomeScreen1')
     //})
 
   }
