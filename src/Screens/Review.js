@@ -16,7 +16,8 @@ import { creatUser, creatUserr } from '../res/Styles/api';
 
 
 
-const Review = (navigatin) => {
+
+ const Review = (navigatin) => {
   
     const [name, setName] = useState('');
     const [tel, setTel] = useState('');
@@ -64,15 +65,16 @@ const Review = (navigatin) => {
       Alert.alert("Massad","The Field is empyy")
     }
    else{
-  const creatUserFromApi =()=>{ 
-    creatUser(body)
-    .then((res)=>{
-      console.log("username",res);
-    })
+    navigatin.navigate('HomeScreen1')
+  //const creatUserFromApi =()=>{ 
+    //creatUser(body)
+    //.then((res)=>{
+      //console.log("username",res);
+    //})
 
   }
 }
-}
+
 
 
 
@@ -183,6 +185,7 @@ const Review = (navigatin) => {
 
   );
 }
+
 
 
 
