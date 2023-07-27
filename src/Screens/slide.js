@@ -7,7 +7,9 @@ export default[
         work:"Daily",
         job:"teaching"   ,  
         messageTime:'4 min ago',
-        messageText:'Hi,kughfiuypuwerto43upoygr[owiehy[p9hygpeqw'         
+        messageText:'Hi'  ,
+        image1: require('../../assests/babyBoy.jpeg'),
+        age:'0-10',      
     },
     {
       id:'2',

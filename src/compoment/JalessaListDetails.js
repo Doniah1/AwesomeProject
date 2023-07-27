@@ -59,12 +59,13 @@ const JalessaListDetails=({navigation,route}) =>{
       }}>
         
     
-      <Text > cdddcdccdcd
-      </Text>
-       </View>
        </View>
        
+       <Image source={item.image1} style={{width: 100 ,height:100,borderRadius:70,marginRight:10}} />
+       <Text style={{fontSize:18,opacity:.7}}>{item.age}</Text>
        
+       
+       </View>
       
      
     
