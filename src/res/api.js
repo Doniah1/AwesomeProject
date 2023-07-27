@@ -8,10 +8,10 @@ const fetchApi = async (link, method, body) => {
         headers: {
             'Content-Type': 'application/json',
         },
-        body: body,
+        body: JSON.stringify(body),
     }).then(res => res.json())
         .catch((error) => {
-            console.error("error", error.massage);
+            console.error("fetch error", error);
         });
 
 }

@@ -5,14 +5,18 @@ export default[
         jobTitle:'Teacher',
         image:require('../../assests/Donia1.jpeg'),
         work:"Daily",
-        job:"teaching"   ,           
+        job:"teaching"   ,  
+        messageTime:'4 min ago',
+        messageText:'Hi,kughfiuypuwerto43upoygr[owiehy[p9hygpeqw'         
     },
     {
       id:'2',
       name:'Donia Hindi',
       jobTitle:'Teacher',
       image:require('../../assests/Donia1.jpeg'),
-       work:"Daily | Monthly",             
+       work:"Daily | Monthly",   
+       messageTime:'4 min ago',
+       messageText:'Hi'                  
   },
     
     {
@@ -20,7 +24,9 @@ export default[
       name:'Alma Hindi  ',
       jobTitle:'Teacher',
       image:require('../../assests/Donia1.jpeg'),
-      work:"Emergency"              
+      work:"Emergency"  , 
+      messageTime:'4 min ago',
+      messageText:'Hi'                   
   },
   {
     id:'4',
@@ -29,6 +35,8 @@ export default[
       
       jobTitle:'Teacher',
       image:require('../../assests/Donia1.jpeg'),
+      messageTime:'4 min ago',
+      messageText:'Hi'        
                     
   },
   {

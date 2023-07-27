@@ -1,12 +1,27 @@
-import { StyleSheet, Text, View } from 'react-native'
+import { FlatList, StyleSheet, Text, View } from 'react-native'
 import React from 'react'
+import slide from './slide'
+import MessageList from '../compoment/MessageList'
 
-export default function Massages() {
+const Massages=({navigation})=> {
   return (
-    <View>
-      <Text>Massages</Text>
-    </View>
+    <View style={{flex:1,paddingLeft:20,paddingRight:20,alignItems:'center',backgroundColor:"#ffffff"}}>
+    <FlatList
+      data={slide}
+     
+      
+      
+     renderItem={({ item }) => <MessageList item={item} />}
+     keyExtractor={item => item.id}>
+    
+
+    
+
+      </FlatList>
+      </View>
   )
 }
 
 const styles = StyleSheet.create({})
+
+export default Massages;
