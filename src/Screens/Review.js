@@ -66,7 +66,7 @@ const Review = ({ navigation }) => {
   const onSubmit = () => {
     console.log("cat: ", category);
     if (!name || !tel || !birthdayDate || !category) {
-      Alert.alert("Massad", "The Field is empyy")
+      Alert.alert("Massage", "The Field is empyy")
     }
 
     else {
