@@ -54,19 +54,26 @@ const JalessaListDetails=({navigation,route}) =>{
      
      
 
-      <View style={{postion:'absolute',
-      width,height,backgroundColor:"white",transform:[{translateY:height/8}],borderRadius:32
-      }}>
+   
+      <View style={{postion:'absolute',flexDirection:'row',justifyContent:'space-between',
+      width,height,backgroundColor:"white",transform:[{translateY:height/8}],borderRadius:32      }}>
         
-    
+        <View style={{flexDirection:'column'}}>
+       
+        <Image source={item.image1} style={{width: 100 ,height:100,borderRadius:70,marginTop:10,marginLeft:20,padding:50}} />
+       <Text style={{fontSize:18,opacity:.7,padding:5,marginLeft:40}}>{item.age}</Text>
        </View>
+       <View style={{flexDirection:'column'}}>
        
-       <Image source={item.image1} style={{width: 100 ,height:100,borderRadius:70,marginRight:10}} />
-       <Text style={{fontSize:18,opacity:.7}}>{item.age}</Text>
-       
-       
+       <Image source={item.imag2} style={{width: 100 ,height:100,borderRadius:70,marginTop:10,marginRight:20,padding:50}} />
+       <Text style={{fontSize:18,opacity:.7,padding:5,marginLeft:40}}>{item.age}</Text>
        </View>
-      
+       </View>
+       </View>
+         
+       
+       
+   
      
     
      

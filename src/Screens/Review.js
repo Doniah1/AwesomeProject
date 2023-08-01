@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useRef, useState } from 'react';
 import { View, StyleSheet, Text, Button, SafeAreaView, TextInput, TouchableOpacity, Pressable, Platform, Alert } from 'react-native';
 import ScreenNames from '../../route/ScreenNames';
 import { useNavigation, NavigationContainer } from '@react-navigation/native';
@@ -10,6 +10,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 import { CheckBox } from 'react-native-elements';
 import { SelectList } from 'react-native-dropdown-select-list';
 import { creatUser } from '../res/api';
+import PhoneInput from 'react-native-phone-number-input';
 
 
 
@@ -22,6 +23,7 @@ const Review = ({ navigation }) => {
 
   const [name, setName] = useState('');
   const [tel, setTel] = useState('');
+  
   const [birthdayDate, setBirithdayDate] = useState('');
 
   const [showDatePicker, setShowDatePicker] = useState(false);
@@ -102,14 +104,21 @@ const Review = ({ navigation }) => {
 
       <View style={globalStyles.view2}>
 
-        <TextInput placeholder='Number Tel'
-          value={tel}
-          onChangeText={setTel}
-          style={globalStyles.text12} keyboardType="numeric"
+       <PhoneInput
+   
+       defaultValue={tel}
+       defaultCode='IL'
+       layout='first'
+       withShadow
+       autoFocus
+       containerStyle={globalStyles.text0}
+       textContainerStyle={{paddingVertical:0}}
+       onChangeFormattedText={text=>{
+        setTel(text);
+       }} 
+       />
 
-        />
-
-        <TouchableOpacity onPress={() => { }}>
+        <TouchableOpacity onPress={()=> navigation.navigate( 'varfication',{tel})}>
           <Text style={globalStyles.text2}>Varyfication</Text>
         </TouchableOpacity>
       </View>

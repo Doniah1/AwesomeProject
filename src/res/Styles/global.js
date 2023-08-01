@@ -81,6 +81,8 @@ const globalStyles = StyleSheet.create({
     text2: {
         color: '#AD40AF',
         fontWeight: '900',
+        paddingLeft:10,
+        paddingTop:10,
         
         
         
@@ -142,8 +144,12 @@ const globalStyles = StyleSheet.create({
     },
     text12: {
         flex: 1,
-        paddingVertical: 0,
+        paddingVertical:0,
 
+    },
+    text0:{
+        flex:2,
+        marginBottom:7,
     },
     veiw1: {
         justifyContent: 'center',

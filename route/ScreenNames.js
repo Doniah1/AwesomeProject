@@ -19,6 +19,7 @@ const ScreenNames = {
     JalessaListDetails:"JalessaListDetails",
     JalessaItem:"JalessaItem",
     Disscsion:"Disscsion",
+    Varfiction:"varfication",
 }
 // Home:{
 //     screen:"Home",

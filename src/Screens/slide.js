@@ -9,7 +9,8 @@ export default[
         messageTime:'4 min ago',
         messageText:'Hi'  ,
         image1: require('../../assests/babyBoy.jpeg'),
-        age:'0-10',      
+        age:'0-10',     
+        imag2:require('../../assests/babyGirl1.jpeg'),
     },
     {
       id:'2',
