@@ -31,7 +31,11 @@ const Review = ({ navigation }) => {
   const [category, setCategory] = useState('');
   const [subcategory, setSubCategory] = useState('');
 
-
+  const firstInput= useRef();
+  const secondInput= useRef();
+  const thirdInput= useRef();
+  const fourthInput= useRef();
+const [otp,setOtp]=useState({1:'',2:'',3:'',4:''});
 
 
 
@@ -42,6 +46,7 @@ const Review = ({ navigation }) => {
   const onChangeDate = ({ type }, selected) => {
     if (type == "set") {
       const currentDate = selected;
+      
 
       setDate(currentDate);
 
@@ -66,7 +71,7 @@ const Review = ({ navigation }) => {
   const onSubmit = () => {
     console.log("cat: ", category);
     if (!name || !tel || !birthdayDate || !category) {
-      Alert.alert("Massage", "The Field is empyy")
+      Alert.alert("Massage", "The Field is empty")
     }
 
     else {
@@ -88,21 +93,23 @@ const Review = ({ navigation }) => {
 
 
 
+
   return (
     <SafeAreaView style={globalStyles.safe2}>
 
-      <View style={{ paddingHorizontal: 25 }}>
+        <View style={{ paddingHorizontal: 25 }}>
 
-      <Text style={globalStyles.Text1}>Login Mom OR DAD</Text>
-      <View style={globalStyles.view2}>
+       <Text style={globalStyles.Text1}>Login Mom OR DAD</Text>
+       <View style={globalStyles.view2}>
 
         <TextInput placeholder='Name Mom OR DAD'
           value={name}
           onChangeText={setName}
           style={globalStyles.text12} keyboardType="Name" />
-      </View>
+         </View>
 
-      <View style={globalStyles.view2}>
+      <  View style={globalStyles.view2}>
+    
 
        <PhoneInput
    
@@ -118,29 +125,42 @@ const Review = ({ navigation }) => {
        }} 
        />
 
-        <TouchableOpacity onPress={()=> navigation.navigate( 'varfication',{tel})}>
+       
+        <TouchableOpacity onPress={()=> navigation.navigate('varfication',{tel})}>
           <Text style={globalStyles.text2}>Varyfication</Text>
         </TouchableOpacity>
-      </View>
-      <View style={globalStyles.view2} >
+        
+       
+        
+        
+
+   
+       
+        </View>
+
+        <View style={globalStyles.view2} >
 
 
+        
+               
+       
         <TouchableOpacity
 
           onPress={() => setShowDatePicker(true)}>
           <Icon name="calendar" style={globalStyles.tex5} />
-        </TouchableOpacity>
+      </TouchableOpacity>
 
         {showDatePicker && (
           <DateTimePicker
-            testID="dateTimePicker"
+           testID="datetimePicker"
             value={date}
             mode="date"
             display="spinner"
             onChange={onChangeDate}
 
 
-          />
+         />
+         
         )
 
         }
@@ -153,52 +173,54 @@ const Review = ({ navigation }) => {
 
         {!showDatePicker && (
           <Pressable
-            onPress={toggleDatepiccker} >
+          onPress={toggleDatepiccker} >
 
-            <TextInput
-              placeholder="Birithday Date for Child"
+           <TextInput
+             placeholder="Birithday Date for Child"
 
               value={birthdayDate}
               style={globalStyles.text12}
               onChangeText={setBirithdayDate}
               editable={false}
               placeholderText="bold"
-            />
-          </Pressable>
+              />
+            
+            </Pressable>
+          
         )
         }
 
 
-
-
-
       </View>
 
+      
+     
 
+     
 
-
-      <View style={{ paddingHorizontal: 1, paddingTop: 1 }}>
+       
+        <View style={{ paddingHorizontal: 1, paddingTop: 1 }}>
         <SelectList
           setSelected={setCategory}
           save='value'
           data={categorys}
           placeholder={"kind Of Jalessa"}
-        />
+         />
 
 
 
-
-      </View>
+          </View>
+         
       <View style={{ justifyContent: 'center' }} >
         <TouchableOpacity onPress={onSubmit}
           style={globalStyles.Touch11}>
           <Text style={globalStyles.context123}>Login </Text>
         </TouchableOpacity>
       </View>
-
-    </View>
-    </SafeAreaView >
-
+       
+       </View>
+      </SafeAreaView>
+    
   );
 }
 
@@ -206,6 +228,77 @@ const Review = ({ navigation }) => {
 
 
 
+const styles = StyleSheet.create({
+  content:{
+    fontSize:20,
+    fontFamily:'Roboto-MediumItalic',
+    marginTop:10,
+    marginBottom:20,
+    marginHorizontal:20,
+},
+tel:{
+    fontSize:18,
+    fontFamily:'Roboto-MediumItalic',
+    color:'gray',
+},
+otpContainer:{
+    marginHorizontal:50,
+    marginBottom:20,
+    justifyContent:'space-evenly',
+    alignItems:'center',
+    flexDirection:'row',
+},
+otpBox:{
+    borderRadius:5,
+    borderColor:'#AD40F',
+    borderWidth:1,
+},
+otpText:{fontSize:25,
+color:'black',
+padding:0,
+textAlign:'center',
+paddingHorizontal:19,
+ paddingVertical:10,
+     },
+     button:{
+       
+       //backgroundColor:'#AD40F',
+       //borderRadius:8,
+       //marginHorizontal:20,
+       //justifyContent:'center',
+       //alignItems:'center',
+       //marginTop:20,
+
+
+       borderRadius:50,
+       backgroundColor: '#AD40AF',
+
+         
+        alignItems:"center",
+        // marginTop:-90,
+         flex:-0.2,
+         fontWeight: 'bold',
+         fontSize: 18,
+         color: '#FFF',
+         fontFamily: 'Roboto-MediumItalic',
+        
+         padding: 20,
+         justifyContent:'center',
+         flexDirection:'row',
+          //backgroundColor:'tranparent',
+           borderWidth:1,
+          borderColor:"white",
+         
+
+     },
+     buttonText:{
+        fontWeight:'bold',
+        fontSize:15,
+        fontFamily:'Roboto-MediumItalic',
+     }
+
+
+})
 
 
 export default Review;

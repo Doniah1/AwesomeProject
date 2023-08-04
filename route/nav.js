@@ -19,7 +19,7 @@ import Swipe from '../src/compoment/Swipe';
 import JalessaListDetails from '../src/compoment/JalessaListDetails';
 import JalessaItem from '../src/compoment/JalessaItem';
 import Disscsion from '../src/compoment/Disscsion';
-import varfication from '../src/Screens/varfication';
+import Varfication from '../src/Screens/Varfication';
 
 
 
@@ -55,7 +55,7 @@ const Stack = createNativeStackNavigator();
                     headerBackTitleVisible:false
                  })}
                  /> 
-                  <Stack.Screen name="varfication" component={varfication}  options={{headerShown:false}}/> 
+                  <Stack.Screen name="varfication" component={Varfication}  options={{headerShown:false}}/> 
              
                
 

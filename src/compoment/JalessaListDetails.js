@@ -1,5 +1,5 @@
-import { StyleSheet, Text, View,Image, TouchableOpacity ,useWindowDimensions} from 'react-native'
-import React from 'react'
+import { StyleSheet, Text, View,Image, TouchableOpacity,TextInput ,useWindowDimensions,Button} from 'react-native'
+import React ,{useState}from 'react'
 import Icon from 'react-native-vector-icons/AntDesign';
 import slide from '../Screens/slide';
 import JalessaItem from './JalessaItem';
@@ -11,6 +11,18 @@ const JalessaListDetails=({navigation,route}) =>{
    const {item}=route.params;
   const { width,height } = useWindowDimensions();
   const topHeight=height*.3;
+  const [numberOfChildren, setNumberOfChildren] = useState(0);
+  const [childrenAges, setChildrenAges] = useState([]);
+
+
+  const incrementChildren = () => {
+    setNumberOfChildren(prevCount => prevCount + 1);
+  };
+  
+  const decrementChildren = () => {
+    setNumberOfChildren(prevCount => Math.max(0, prevCount - 1));
+  };
+
   return (
     <View style={{flex: 1,backgroundColor:'#AD40Af',height:topHeight+32}}>
       
@@ -32,6 +44,7 @@ const JalessaListDetails=({navigation,route}) =>{
       }}
       />
       </TouchableOpacity>
+      
 
       <View style={{flexDirection:"row",padding:20,marginBottom:5,backgroundColor:'#AD40Af',borderRadius:25}}>
       
@@ -53,11 +66,12 @@ const JalessaListDetails=({navigation,route}) =>{
       
      
      
-
-   
-      <View style={{postion:'absolute',flexDirection:'row',justifyContent:'space-between',
+       
+      
+      <View style={{postion:'absolute',
       width,height,backgroundColor:"white",transform:[{translateY:height/8}],borderRadius:32      }}>
         
+       <View style={{flexDirection:'row',justifyContent:'space-between'}}>
         <View style={{flexDirection:'column'}}>
        
         <Image source={item.image1} style={{width: 100 ,height:100,borderRadius:70,marginTop:10,marginLeft:20,padding:50}} />
@@ -67,9 +81,51 @@ const JalessaListDetails=({navigation,route}) =>{
        
        <Image source={item.imag2} style={{width: 100 ,height:100,borderRadius:70,marginTop:10,marginRight:20,padding:50}} />
        <Text style={{fontSize:18,opacity:.7,padding:5,marginLeft:40}}>{item.age}</Text>
+      
        </View>
        </View>
-       </View>
+       
+          <View style={{flexDirection:'row'}}>
+          <Text>Number of Children: </Text>
+         <Button title="+" onPress={incrementChildren} />
+         <Text> {numberOfChildren}</Text>
+          <Button title="-" onPress={decrementChildren} />
+          <View style={{flexDirection:'column'}}>
+         </View>
+          
+        </View>
+       
+        
+          <View style={{flexDirection:'row'}}>
+         <Text>Age :</Text>
+         <TextInput
+    
+          placeholder={`Enter age for Child ${numberOfChildren + 1}`}
+      
+        value={childrenAges}
+        onChangeText={text => {
+        const newAges = [...childrenAges];
+        newAges[childrenAges] = text;
+        setChildrenAges(newAges);
+      }}
+       
+    />
+    
+    </View>
+   </View>
+
+</View>
+
+
+
+
+
+
+    
+
+       
+       );
+       }
          
        
        
@@ -80,9 +136,7 @@ const JalessaListDetails=({navigation,route}) =>{
     
     
    
-  )  ;
-}
-
+  
 const styles = StyleSheet.create({})
 
 export default JalessaListDetails;
