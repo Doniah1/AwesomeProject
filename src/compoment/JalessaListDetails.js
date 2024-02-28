@@ -1,10 +1,6 @@
 import { StyleSheet, Text, View,Image, TouchableOpacity,TextInput ,useWindowDimensions,Button} from 'react-native'
 import React ,{useState}from 'react'
 import Icon from 'react-native-vector-icons/AntDesign';
-import slide from '../Screens/slide';
-import JalessaItem from './JalessaItem';
- import { SharedElement } from 'react-native-shared-element';
-import HomeScreen1 from '../Screens/HomeScreen1';
 
 const JalessaListDetails=({navigation,route}) =>{
 
@@ -13,10 +9,14 @@ const JalessaListDetails=({navigation,route}) =>{
   const topHeight=height*.3;
   const [numberOfChildren, setNumberOfChildren] = useState(0);
   const [childrenAges, setChildrenAges] = useState([]);
+  const [input, setInput] = useState([]);
 
 
   const incrementChildren = () => {
     setNumberOfChildren(prevCount => prevCount + 1);
+    const newInput=[...input];
+    newInput.push('');
+    setInput(newInput);
   };
   
   const decrementChildren = () => {
@@ -85,7 +85,7 @@ const JalessaListDetails=({navigation,route}) =>{
        </View>
        </View>
        
-          <View style={{flexDirection:'row'}}>
+          <View style={{flexDirection:'row',padding:10}}>
           <Text>Number of Children: </Text>
          <Button title="+" onPress={incrementChildren} />
          <Text> {numberOfChildren}</Text>
@@ -93,10 +93,10 @@ const JalessaListDetails=({navigation,route}) =>{
           <View style={{flexDirection:'column'}}>
          </View>
           
-        </View>
-       
         
-          <View style={{flexDirection:'row'}}>
+        </View>
+        
+          <View style={{flexDirection:'row',padding:10}}>
          <Text>Age :</Text>
          <TextInput
     
@@ -111,7 +111,8 @@ const JalessaListDetails=({navigation,route}) =>{
        
     />
     
-    </View>
+   </View>
+   
    </View>
 
 </View>
